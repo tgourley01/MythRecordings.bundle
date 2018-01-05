@@ -736,7 +736,7 @@ def Sanitize(str):
 #    ObjectContainer
 ####################################################################################################
 @route('/video/mythrecordings/GetRecordingInfo', allow_sync=True)
-def RecordingInfo(chanId, startTime, seriesInetRef = None, checkFiles = 0, includeBandwidths = None):
+def RecordingInfo(chanId, startTime, seriesInetRef = None, checkFiles = 0, includeBandwidths = None, offset = 0):
 	Log('RecordingInfo(chanId="%s", startTime="%s" seriesInetRef="%s")' % (chanId, startTime, seriesInetRef))
 	url = PVR_URL + 'Dvr/GetRecorded?StartTime=%s&ChanId=%s' % (startTime, chanId)
 	request = urllib2.Request(url, headers={"Accept" : "application/xml"})
